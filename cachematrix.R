@@ -23,10 +23,11 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
       inv <-x$getinv()
       if(!is.null(inv)){
-            message("no need to calculate again.
-                    let me get the cached data...")
+            message("no need to calculate again! let me get the cached data...")
             return(inv)
       }
       data<-x$get()
-      
+      inv<-solve(data)
+      x$setinv(inv)
+      inv      
 }
