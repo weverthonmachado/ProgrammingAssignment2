@@ -37,7 +37,7 @@ cacheSolve <- function(x, ...) {
                   }                            # doesn't cal again and return it
       
       data<-x$get()                            # gets the original matrix    
-      inv<-solve(data)                         # inverts the matrix
+      inv<-solve(data, ...)                    # inverts the matrix
       x$setinv(inv)                            # saves the inverse matrix in x
       inv                                      # print inv
 }
